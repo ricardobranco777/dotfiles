@@ -47,6 +47,10 @@ for dir in /sbin /usr/sbin /usr/local/sbin /usr/local/go/bin $HOME/bin $HOME/.lo
 done
 unset dir
 
+if [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] ; then
+	source /usr/local/share/bash-completion/bash_completion.sh
+fi
+
 if [ -z "$GIT_PROMPT_ONLY_IN_REPO" -a -f "$HOME/.bash-git-prompt/gitprompt.sh" ] ; then
 	GIT_PROMPT_ONLY_IN_REPO=1
 	GIT_PROMPT_END=" "
