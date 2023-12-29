@@ -1,8 +1,11 @@
 INSTALL	= install -C -v
 MKDIR = mkdir -v -m 0750 -p 
 
+BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
+VIM = $(HOME)/.vimrc
+
 .PHONY:
-all: $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
+all: $(BASH) $(VIM)
 
 $(HOME)/.bash_profile: .bash_profile
 	@$(INSTALL) $? $@
@@ -15,4 +18,7 @@ $(HOME)/.bashrc.d/custom.sh: .bashrc.d/custom.sh
 	@$(INSTALL) $? $@
 
 $(HOME)/.bash_logout: .bash_logout
+	@$(INSTALL) $? $@
+
+$(HOME)/.vimrc: .vimrc
 	@$(INSTALL) $? $@
