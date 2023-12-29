@@ -47,8 +47,8 @@ for dir in /sbin /usr/sbin /usr/local/sbin /usr/local/go/bin $HOME/bin $HOME/.lo
 done
 unset dir
 
-if [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] ; then
-	source /usr/local/share/bash-completion/bash_completion.sh
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+	source /etc/profile.d/vte.sh
 fi
 
 if [ -z "$GIT_PROMPT_ONLY_IN_REPO" -a -f "$HOME/.bash-git-prompt/gitprompt.sh" ] ; then
@@ -76,8 +76,4 @@ fi
 
 if command -v virsh >/dev/null && [ "$HOSTNAME" != "ricardox" ] ; then
 	export LIBVIRT_DEFAULT_URI=qemu+ssh://ricardo@ricardox/system
-fi
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-	source /etc/profile.d/vte.sh
 fi
