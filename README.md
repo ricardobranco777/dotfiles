@@ -1,4 +1,6 @@
-dotfiles
+# dotfiles
+
+To install run `make install`
 
 Tested on:
 - openSUSE

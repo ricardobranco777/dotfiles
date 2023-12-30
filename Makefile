@@ -1,11 +1,11 @@
-INSTALL	= install -C -v
-MKDIR = mkdir -v -m 0750 -p 
+INSTALL	= install -C -m 0644 -v
+MKDIR = mkdir -p -m 0750 -v
 
 BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
 VIM = $(HOME)/.vimrc
 
 .PHONY:
-all: $(BASH) $(VIM)
+install: $(BASH) $(VIM)
 
 $(HOME)/.bash_profile: .bash_profile
 	@$(INSTALL) $? $@
