@@ -57,7 +57,11 @@ if [ -z "$GIT_PROMPT_ONLY_IN_REPO" -a -f "$HOME/.bash-git-prompt/gitprompt.sh" ]
 	GIT_PROMPT_ONLY_IN_REPO=1
 	GIT_PROMPT_START="[\u@\h \w]"
 	GIT_PROMPT_END=" "
-	source "$HOME/.bash-git-prompt/gitprompt.sh"
+	. "$HOME/.bash-git-prompt/gitprompt.sh"
+fi
+
+if [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] ; then
+	. /usr/local/share/bash-completion/bash_completion.sh
 fi
 
 # Fix for idiotic "go get"
