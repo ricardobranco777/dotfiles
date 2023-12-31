@@ -11,6 +11,7 @@ alias ln='ln -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+ulimit -c 0
 umask 027
 
 if command -v vim >/dev/null ; then
