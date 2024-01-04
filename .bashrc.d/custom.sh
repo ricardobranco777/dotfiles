@@ -1,7 +1,7 @@
 HISTSIZE=-1
 HISTFILESIZE=-1
 HISTCONTROL=ignoreboth
-PS1="[\u@\h \w]\$ "
+PS1='[\u@\h \w]\$ '
 
 export PAGER=less
 export SYSTEMD_PAGER=
