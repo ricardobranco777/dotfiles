@@ -8,3 +8,5 @@ Tested on:
 - Debian
 - Ubuntu
 - FreeBSD
+- DragonflyBSD
+- OpenSolaris (OpenIndiana Hipster & OmniOS CE)
