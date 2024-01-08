@@ -4,12 +4,27 @@ HISTCONTROL=ignoreboth
 PS1='[\u@\h \w]\$ '
 
 export PAGER=less
-export SYSTEMD_PAGER=
+export LESS='-M'
+if [ -f /usr/local/bin/lesspipe.sh ] ; then
+	export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
+fi
+
+if [ -d /etc/systemd ] ; then
+	export SYSTEMD_PAGER=
+fi
 
 alias cp='cp -ip'
 alias ln='ln -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+export COLORTERM="${COLORTERM:-truecolor}"
+SYSTEM=$(uname -s)
+if [ $(uname -s) = "FreeBSD" ] ; then
+	alias ll='ls -lo --color=auto'
+else
+	alias ll='ls -l --color=auto'
+fi
 
 ulimit -c 0
 umask 027
