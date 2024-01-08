@@ -4,7 +4,6 @@ HISTCONTROL=ignoreboth
 PS1='[\u@\h \w]\$ '
 
 export PAGER=less
-export LESS='-M'
 if [ -f /usr/local/bin/lesspipe.sh ] ; then
 	export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
 fi
@@ -21,6 +20,9 @@ alias rm='rm -i'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+# git fails if we set LESS
+alias less='less -M'
 
 export COLORTERM="${COLORTERM:-truecolor}"
 SYSTEM=$(uname -s)
