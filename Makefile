@@ -1,5 +1,5 @@
-INSTALL	= install -C -m 0644 -v
-MKDIR = mkdir -p -m 0750 -v
+INSTALL	= cp -v
+MKDIR = mkdir -p -m 0750
 
 BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
 VIM = $(HOME)/.vimrc
