@@ -26,7 +26,7 @@ alias less='less -M'
 
 export COLORTERM="${COLORTERM:-truecolor}"
 SYSTEM=$(uname -s)
-if [ $(uname -s) = "FreeBSD" ] ; then
+if [[ "$SYSTEM" == *BSD ]] ; then
 	alias ll='ls -lo --color=auto'
 else
 	alias ll='ls -l --color=auto'
