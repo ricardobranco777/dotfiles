@@ -9,5 +9,6 @@ Tested on:
 - Ubuntu
 - FreeBSD
 - NetBSD
+- OpenBSD
 - DragonflyBSD
 - OpenSolaris (OpenIndiana Hipster & OmniOS CE)

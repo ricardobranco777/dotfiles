@@ -1,4 +1,4 @@
-INSTALL	= cp -v
+INSTALL	= cp
 MKDIR = mkdir -p -m 0750
 
 BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
