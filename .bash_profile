@@ -1,7 +1,8 @@
 # .bash_profile
 
 # Useful on non-Linux systems
-if [ -f ~/.profile -a ~/.shrc ] ; then
+SYSTEM=$(uname -s)
+if [ "$SYSTEM" != "Linux" ] ; then
 	. ~/.profile
 fi
 

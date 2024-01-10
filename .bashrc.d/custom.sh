@@ -25,7 +25,8 @@ alias fgrep='fgrep --color=auto'
 alias less='less -M'
 
 export COLORTERM="${COLORTERM:-truecolor}"
-SYSTEM=$(uname -s)
+
+SYSTEM=${SYSTEM:-$(uname -s)}
 if [[ "$SYSTEM" == *BSD ]] ; then
 	alias ll='ls -lo --color=auto'
 else
