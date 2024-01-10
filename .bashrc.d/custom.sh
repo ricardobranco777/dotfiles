@@ -51,7 +51,7 @@ if [ -n "$PS1" ] ; then
 	shopt -s histappend
 fi
 
-if command -v poweroff >/dev/null ; then
+if ! command -v poweroff >/dev/null ; then
 	alias poweroff='shutdown -p now'
 fi
 
