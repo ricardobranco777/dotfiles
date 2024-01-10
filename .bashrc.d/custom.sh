@@ -56,7 +56,7 @@ if [ "$USER" == "root" ] ; then
 	return
 fi
 
-for dir in /sbin /usr/sbin /usr/local/sbin /usr/local/go/bin $HOME/bin $HOME/.local/bin $HOME/go/bin ; do
+for dir in /sbin /usr/sbin /usr/local/sbin /usr/local/go/bin /usr/pkg/bin /usr/pkg/sbin $HOME/bin $HOME/.local/bin $HOME/go/bin ; do
 	if [ ! -d "$dir" ] ; then
 		continue
 	fi
