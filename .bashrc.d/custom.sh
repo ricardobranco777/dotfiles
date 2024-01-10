@@ -81,8 +81,12 @@ if [ -z "$GIT_PROMPT_ONLY_IN_REPO" -a -f "$HOME/.bash-git-prompt/gitprompt.sh" ]
 	. "$HOME/.bash-git-prompt/gitprompt.sh"
 fi
 
-if [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] ; then
-	. /usr/local/share/bash-completion/bash_completion.sh
+if [[ $PS1 ]] ; then
+	if [ -f /usr/local/share/bash-completion/bash_completion.sh ] ; then
+		. /usr/local/share/bash-completion/bash_completion.sh
+	elif [ -f /usr/pkg/share/bash-completion/bash_completion ] ; then
+		. /usr/pkg/share/bash-completion/bash_completion
+	fi
 fi
 
 # Fix for idiotic "go get"
