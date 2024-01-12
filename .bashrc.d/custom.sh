@@ -17,9 +17,15 @@ alias ln='ln -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+if [ "$SYSTEM" != "OpenBSD" ] ; then
+	alias grep='grep --color=auto'
+	alias egrep='egrep --color=auto'
+	alias fgrep='fgrep --color=auto'
+elif command -v ggrep >/dev/null ; then
+	alias grep='ggrep --color=auto'
+	alias egrep='gegrep --color=auto'
+	alias fgrep='gfgrep --color=auto'
+fi
 
 # git fails if we set LESS
 alias less='less -M'
@@ -27,8 +33,10 @@ alias less='less -M'
 export COLORTERM="${COLORTERM:-truecolor}"
 
 SYSTEM=${SYSTEM:-$(uname -s)}
-if [[ "$SYSTEM" == *BSD ]] ; then
+if [ "$SYSTEM" = "FreeBSD" ] ; then
 	alias ll='ls -lo --color=auto'
+elif [[ "$SYSTEM" == *BSD ]] ; then
+	alias ll='ls -lo'
 else
 	alias ll='ls -l --color=auto'
 fi
