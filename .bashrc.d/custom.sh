@@ -17,14 +17,14 @@ alias ln='ln -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-if [ "$SYSTEM" != "OpenBSD" ] ; then
-	alias grep='grep --color=auto'
-	alias egrep='egrep --color=auto'
-	alias fgrep='fgrep --color=auto'
-elif command -v ggrep >/dev/null ; then
+if command -v ggrep >/dev/null ; then
 	alias grep='ggrep --color=auto'
 	alias egrep='gegrep --color=auto'
 	alias fgrep='gfgrep --color=auto'
+else
+	alias grep='grep --color=auto'
+	alias egrep='egrep --color=auto'
+	alias fgrep='fgrep --color=auto'
 fi
 
 # git fails if we set LESS
