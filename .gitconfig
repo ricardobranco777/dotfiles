@@ -1,0 +1,23 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Ricardo Branco
+	email = rbranco@suse.de
+	signingkey = /home/ricardo/.ssh/id_ed25519.pub
+[alias]
+	backup = "!f() { local branch=${1:-$(git branch --show-current)} ; git branch -D $branch.backup 2>/dev/null ; git branch $branch.backup; }; f"
+	rmbackup = "!f() { local branch=${1:-$(git branch --show-current)} ; git branch -D $branch.backup; }; f"
+	rmbranch = "!f() { git push -u ${2:-origin} --delete \"$1\"; git branch -D \"$1\"; }; f"
+	rmtag = "!f() { git push -u ${2:-origin} --delete \"$1\"; git tag --delete \"$1\"; }; f"
+	resetall = "!git reset HEAD . ; git checkout -- ."
+	restoreit = "!git restore -S \"$@\" ; git restore \"$@\""
+[push]
+	followTags = true
+	autoSetupRemote = true
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true
+[gpg]
+	format = ssh
