@@ -57,6 +57,7 @@ if [ -n "$PS1" ] ; then
 	shopt -s checkhash
 	shopt -s extglob
 	shopt -s histappend
+	shopt -s globstar
 fi
 
 if ! command -v poweroff >/dev/null ; then
