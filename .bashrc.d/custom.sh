@@ -27,6 +27,14 @@ else
 	alias fgrep='fgrep --color=auto'
 fi
 
+# Also alias better GNU commands if available
+for cmd in find sed ; do
+	if command -v g$cmd >/dev/null ; then
+		alias $cmd=g$cmd
+	fi
+done
+unset cmd
+
 # git fails if we set LESS
 alias less='less -M'
 
