@@ -21,3 +21,7 @@
 	rebase = true
 [gpg]
 	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/ricardo/.ssh/allowed_signers
+[tag]
+	gpgsign = true

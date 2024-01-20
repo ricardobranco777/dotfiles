@@ -1,9 +1,9 @@
-INSTALL	= cp
+INSTALL	= install -m 0600
 MKDIR = mkdir -p -m 0700
 
 BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
 VIM = $(HOME)/.vimrc
-GIT = $(HOME)/.gitconfig $(HOME)/.ssh/id_ed25519.pub
+GIT = $(HOME)/.gitconfig $(HOME)/.ssh/id_ed25519.pub $(HOME)/.ssh/allowed_signers
 
 .PHONY:
 install: $(BASH) $(VIM) $(GIT)
@@ -28,5 +28,9 @@ $(HOME)/.gitconfig: .gitconfig
 	$(INSTALL) $? $@
 
 $(HOME)/.ssh/id_ed25519.pub: .ssh/id_ed25519.pub
+	@$(MKDIR) $(HOME)/.ssh/ || true
+	$(INSTALL) $? $@
+
+$(HOME)/.ssh/allowed_signers: .ssh/allowed_signers
 	@$(MKDIR) $(HOME)/.ssh/ || true
 	$(INSTALL) $? $@
