@@ -9,24 +9,24 @@ GIT = $(HOME)/.gitconfig $(HOME)/.ssh/id_ed25519.pub
 install: $(BASH) $(VIM)
 
 $(HOME)/.bash_profile: .bash_profile
-	@$(INSTALL) $? $@
+	$(INSTALL) $? $@
 
 $(HOME)/.bashrc: .bashrc
-	@$(INSTALL) $? $@
+	$(INSTALL) $? $@
 
 $(HOME)/.bashrc.d/custom.sh: .bashrc.d/custom.sh
 	@$(MKDIR) $(HOME)/.bashrc.d/ || true
-	@$(INSTALL) $? $@
+	$(INSTALL) $? $@
 
 $(HOME)/.bash_logout: .bash_logout
-	@$(INSTALL) $? $@
+	$(INSTALL) $? $@
 
 $(HOME)/.vimrc: .vimrc
-	@$(INSTALL) $? $@
+	$(INSTALL) $? $@
 
 $(HOME)/.gitconfig: .gitconfig
-	@$(INSTALL) $? $@
+	$(INSTALL) $? $@
 
 $(HOME)/.ssh/id_ed25519.pub: .ssh/id_ed25519.pub
 	@$(MKDIR) $(HOME)/.ssh/ || true
-	@$(INSTALL) $? $@
+	$(INSTALL) $? $@
