@@ -6,7 +6,7 @@ VIM = $(HOME)/.vimrc
 GIT = $(HOME)/.gitconfig $(HOME)/.ssh/id_ed25519.pub
 
 .PHONY:
-install: $(BASH) $(VIM)
+install: $(BASH) $(VIM) $(GIT)
 
 $(HOME)/.bash_profile: .bash_profile
 	$(INSTALL) $? $@
