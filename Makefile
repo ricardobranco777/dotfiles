@@ -1,4 +1,4 @@
-INSTALL	= install -m 0600
+INSTALL	= cp
 MKDIR = mkdir -p -m 0700
 
 BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
