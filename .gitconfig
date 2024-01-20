@@ -2,7 +2,7 @@
 [user]
 	name = Ricardo Branco
 	email = rbranco@suse.de
-	signingkey = /home/ricardo/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 [alias]
 	backup = "!f() { local branch=${1:-$(git branch --show-current)} ; git branch -D $branch.backup 2>/dev/null ; git branch $branch.backup; }; f"
 	rmbackup = "!f() { local branch=${1:-$(git branch --show-current)} ; git branch -D $branch.backup; }; f"
@@ -22,6 +22,6 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	allowedSignersFile = /home/ricardo/.ssh/allowed_signers
+	allowedSignersFile = ~/.ssh/allowed_signers
 [tag]
 	gpgsign = true
