@@ -19,12 +19,12 @@ alias rm='rm -i'
 
 if command -v ggrep >/dev/null ; then
 	alias grep='ggrep --color=auto'
-	alias egrep='gegrep --color=auto'
-	alias fgrep='gfgrep --color=auto'
+	alias egrep='ggrep -E --color=auto'
+	alias fgrep='ggrep -F --color=auto'
 else
 	alias grep='grep --color=auto'
-	alias egrep='egrep --color=auto'
-	alias fgrep='fgrep --color=auto'
+	alias egrep='grep -E --color=auto'
+	alias fgrep='grep -F --color=auto'
 fi
 
 # Also alias better GNU commands if available
