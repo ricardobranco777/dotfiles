@@ -106,6 +106,8 @@ fi
 if [[ $PS1 ]] ; then
 	if [ -f /usr/local/share/bash-completion/bash_completion.sh ] ; then
 		. /usr/local/share/bash-completion/bash_completion.sh
+	elif [ -f /usr/local/share/bash-completion/bash_completion ] ; then
+		. /usr/local/share/bash-completion/bash_completion
 	elif [ -f /usr/pkg/share/bash-completion/bash_completion ] ; then
 		. /usr/pkg/share/bash-completion/bash_completion
 	fi
