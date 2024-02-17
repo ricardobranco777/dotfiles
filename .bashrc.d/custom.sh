@@ -68,10 +68,6 @@ if [ -n "$PS1" ] ; then
 	shopt -s globstar
 fi
 
-if ! command -v poweroff >/dev/null ; then
-	alias poweroff='shutdown -p now'
-fi
-
 # Ignore the rest of this file for root users
 
 if [ "$USER" == "root" ] ; then
