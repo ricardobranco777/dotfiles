@@ -50,7 +50,9 @@ else
 fi
 
 ulimit -c 0
-umask 027
+if [ "$UID" -ne 0 ] ; then
+	umask 027
+fi
 
 if command -v vim >/dev/null ; then
 	export EDITOR=vim
