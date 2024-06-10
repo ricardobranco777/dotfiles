@@ -129,5 +129,5 @@ if [ -z "$TZ" -a -L /etc/localtime ] ; then
 fi
 
 if command -v virsh >/dev/null && [ "$HOSTNAME" != "ricardox" ] ; then
-	export LIBVIRT_DEFAULT_URI=qemu+ssh://ricardo@ricardox/system
+	export LIBVIRT_DEFAULT_URI=qemu+ssh://root@opensuse/system
 fi
