@@ -91,7 +91,13 @@ done
 unset dir
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-	source /etc/profile.d/vte.sh
+	for dir in /etc/profile.d /usr/local/etc/profile.d/vte.sh /usr/pkg/etc/profile.d/vte.sh ; do
+		if [ -f "$dir/vte.sh" ] ; then
+			source "$dir/vte.sh"
+			break
+		fi
+	done
+	unset dir
 fi
 
 if [ -z "$GIT_PROMPT_ONLY_IN_REPO" -a -f "$HOME/.bash-git-prompt/gitprompt.sh" ] ; then
