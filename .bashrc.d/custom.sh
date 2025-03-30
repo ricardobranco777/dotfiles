@@ -67,7 +67,7 @@ if [ -n "$PS1" ] ; then
 	shopt -s checkhash
 	shopt -s extglob
 	shopt -s histappend
-	shopt -s globstar
+	shopt -s globstar 2>/dev/null
 fi
 
 # Ignore the rest of this file for root users

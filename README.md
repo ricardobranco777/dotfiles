@@ -12,3 +12,6 @@ Tested on:
 - OpenBSD
 - DragonflyBSD
 - OpenSolaris (OpenIndiana Hipster & OmniOS CE)
+- MacOS X
+
+NOTE: On MacOS X run `mv ~/.bash_profile ~/.profile`
