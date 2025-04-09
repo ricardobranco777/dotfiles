@@ -1,6 +1,7 @@
 HISTSIZE=10000000
 HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignoreboth
+MANWIDTH=tty
 PS1='[\u@\h \w]\$ '
 
 export PAGER=less
