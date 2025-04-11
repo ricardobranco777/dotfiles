@@ -1,9 +1,9 @@
 HISTSIZE=10000000
 HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignoreboth
-MANWIDTH=tty
 PS1='[\u@\h \w]\$ '
 
+export MANWIDTH=tty
 export PAGER=less
 if [ -f /usr/local/bin/lesspipe.sh ] ; then
 	export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
