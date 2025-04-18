@@ -13,8 +13,12 @@ if [ -d /etc/systemd ] ; then
 	export SYSTEMD_PAGER=
 fi
 
+SYSTEM=${SYSTEM:-$(uname -s)}
+
 alias cp='cp -ip'
-alias ln='ln -i'
+if [ "$SYSTEM" != "OpenBSD" ] ; then
+	alias ln='ln -i'
+fi
 alias mv='mv -i'
 alias rm='rm -i'
 
@@ -41,7 +45,6 @@ alias less='less -M'
 
 export COLORTERM="${COLORTERM:-truecolor}"
 
-SYSTEM=${SYSTEM:-$(uname -s)}
 if [ "$SYSTEM" = "FreeBSD" ] ; then
 	alias ll='ls -lo --color=auto'
 elif [[ "$SYSTEM" == *BSD ]] ; then
