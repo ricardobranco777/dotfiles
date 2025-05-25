@@ -77,7 +77,7 @@ if [ "$USER" == "root" ] ; then
 	return
 fi
 
-for dir in /usr/gnu/bin /sbin /usr/sbin /usr/local/sbin /usr/local/go/bin /usr/pkg/bin /usr/pkg/sbin $HOME/bin $HOME/.local/bin $HOME/go/bin ; do
+for dir in /sbin /usr/sbin /usr/local/sbin /usr/local/go/bin /usr/pkg/bin /usr/pkg/sbin $HOME/bin $HOME/.local/bin $HOME/go/bin ; do
 	if [ ! -d "$dir" ] ; then
 		continue
 	fi
@@ -89,7 +89,10 @@ for dir in /usr/gnu/bin /sbin /usr/sbin /usr/local/sbin /usr/local/go/bin /usr/p
 		;;
     	esac
 done
-unset dir
+
+if [ -d /usr/gnu/bin ] ; then
+	PATH=/usr/gnu/bin:$PATH
+fi
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	for dir in /etc/profile.d /usr/local/etc/profile.d/vte.sh /usr/pkg/etc/profile.d/vte.sh ; do
