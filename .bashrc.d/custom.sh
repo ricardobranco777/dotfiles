@@ -9,6 +9,8 @@ if [ -f /usr/local/bin/lesspipe.sh ] ; then
 	export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
 fi
 
+# Fix idiotic Systemd behaviour breaking Unix philosophy
+# by using a pager by default
 if [ -d /etc/systemd ] ; then
 	export SYSTEMD_PAGER=
 fi
