@@ -10,6 +10,7 @@
 	rmtag = "!f() { git push -u ${2:-origin} --delete \"$1\"; git tag --delete \"$1\"; }; f"
 	resetall = "!git reset HEAD . ; git checkout -- ."
 	restoreit = "!git restore -S \"$@\" ; git restore \"$@\""
+	head = "!f() { git symbolic-ref refs/remotes/origin/HEAD --short | cut -d/ -f2; }; f"
 [push]
 	followTags = true
 	autoSetupRemote = true
