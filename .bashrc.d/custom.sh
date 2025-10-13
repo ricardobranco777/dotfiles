@@ -79,23 +79,6 @@ if [ "$USER" == "root" ] ; then
 	return
 fi
 
-for dir in /sbin /usr/sbin /usr/local/sbin /usr/local/bin /usr/local/go/bin /usr/pkg/bin /usr/pkg/sbin $HOME/bin $HOME/.local/bin $HOME/go/bin ; do
-	if [ ! -d "$dir" ] ; then
-		continue
-	fi
-	case ":$PATH:" in
-	*:"$dir":*)
-	    	;;
-	*)
-		PATH="$PATH:$dir"
-		;;
-    	esac
-done
-
-if [ -d /usr/gnu/bin ] ; then
-	PATH=/usr/gnu/bin:$PATH
-fi
-
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	for dir in /etc/profile.d /usr/local/etc/profile.d/vte.sh /usr/pkg/etc/profile.d/vte.sh ; do
 		if [ -f "$dir/vte.sh" ] ; then
