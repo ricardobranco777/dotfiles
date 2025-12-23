@@ -11,6 +11,7 @@
 	resetall = "!git reset HEAD . ; git checkout -- ."
 	restoreit = "!git restore -S \"$@\" ; git restore \"$@\""
 	head = "!f() { git symbolic-ref refs/remotes/origin/HEAD --short | cut -d/ -f2; }; f"
+	whatchanged = log --raw --no-merges
 [push]
 	followTags = true
 	autoSetupRemote = true
