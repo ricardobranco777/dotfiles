@@ -1,7 +1,7 @@
 INSTALL	= cp
 MKDIR = mkdir -p -m 0700
 
-BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
+BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bashrc.d/doas.sh $(HOME)/.bashrc.d/wget.sh $(HOME)/.bash_logout
 VIM = $(HOME)/.vimrc
 GIT = $(HOME)/.gitconfig $(HOME)/.ssh/id_ed25519.pub $(HOME)/.ssh/allowed_signers
 PERL = $(HOME)/.perltidyrc
@@ -16,6 +16,14 @@ $(HOME)/.bashrc: .bashrc
 	$(INSTALL) $? $@
 
 $(HOME)/.bashrc.d/custom.sh: .bashrc.d/custom.sh
+	@$(MKDIR) $(HOME)/.bashrc.d/ || true
+	$(INSTALL) $? $@
+
+$(HOME)/.bashrc.d/doas.sh: .bashrc.d/doas.sh
+	@$(MKDIR) $(HOME)/.bashrc.d/ || true
+	$(INSTALL) $? $@
+
+$(HOME)/.bashrc.d/wget.sh: .bashrc.d/wget.sh
 	@$(MKDIR) $(HOME)/.bashrc.d/ || true
 	$(INSTALL) $? $@
 
