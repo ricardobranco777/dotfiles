@@ -18,11 +18,18 @@ dirs+=(/usr/gnu/bin)
 dirs+=(/usr/local/bin /usr/local/sbin)
 # pkgsrc
 dirs+=(/usr/pkg/bin /usr/pkg/sbin)
-# POSIX & system PATH
+# POSIX
 dirs+=(/bin /sbin /usr/bin /usr/sbin)
-dirs+=(${PATH//:/ })
 # Golang
 dirs+=(/usr/local/go/bin)
+# X11
+dirs+=(/usr/X11R7/bin /usr/X11R6/bin)
+# games
+if [ -x /usr/games/fortune ] ; then
+	dirs+=(/usr/games)
+fi
+# System directories
+dirs+=(${PATH//:/ })
 # User-writable directories should come last
 dirs+=($HOME/bin $HOME/.local/bin $HOME/go/bin)
 
