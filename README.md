@@ -1,6 +1,10 @@
 # dotfiles
 
-To install run `make install`
+## Dependencies
+
+- GNU make
+
+To install run `make` or `gmake`
 
 Tested on:
 - openSUSE
