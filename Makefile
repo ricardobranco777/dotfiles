@@ -1,13 +1,16 @@
 INSTALL	= cp
 MKDIR = mkdir -p -m 0700
 
-BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bashrc.d/doas.sh $(HOME)/.bashrc.d/wget.sh $(HOME)/.bash_logout
-VIM = $(HOME)/.vimrc
+BASH = $(HOME)/.bash_profile $(HOME)/.bashrc $(HOME)/.bashrc.d/custom.sh $(HOME)/.bash_logout
+DOAS = $(HOME)/.bashrc.d/doas.sh
 GIT = $(HOME)/.gitconfig $(HOME)/.ssh/id_ed25519.pub $(HOME)/.ssh/allowed_signers
 PERL = $(HOME)/.perltidyrc
+PODMAN = $(HOME)/.bashrc.d/podman.sh
+VIM = $(HOME)/.vimrc
+WGET = $(HOME)/.bashrc.d/wget.sh
 
 .PHONY:
-install: $(BASH) $(VIM) $(GIT) $(PERL)
+install: $(BASH) $(DOAS) $(GIT) $(PERL) $(PODMAN) $(VIM) $(WGET)
 
 $(HOME)/.bash_profile: .bash_profile
 	$(INSTALL) $? $@
