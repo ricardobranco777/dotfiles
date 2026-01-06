@@ -23,6 +23,10 @@ $(HOME)/.bashrc.d/doas.sh: .bashrc.d/doas.sh
 	@$(MKDIR) $(HOME)/.bashrc.d/ || true
 	$(INSTALL) $? $@
 
+$(HOME)/.bashrc.d/podman.sh: .bashrc.d/podman.sh
+	@$(MKDIR) $(HOME)/.bashrc.d/ || true
+	$(INSTALL) $? $@
+
 $(HOME)/.bashrc.d/wget.sh: .bashrc.d/wget.sh
 	@$(MKDIR) $(HOME)/.bashrc.d/ || true
 	$(INSTALL) $? $@
