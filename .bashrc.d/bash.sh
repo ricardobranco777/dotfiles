@@ -15,7 +15,7 @@ if [ -n "$PS1" ] ; then
 	shopt -s globstar 2>/dev/null
 fi
 
-if [ -n $PS1 ] ; then
+if [ -n "$PS1" ] ; then
 	if [ -f /usr/local/share/bash-completion/bash_completion.sh ] ; then
 		. /usr/local/share/bash-completion/bash_completion.sh
 	elif [ -f /usr/local/share/bash-completion/bash_completion ] ; then
