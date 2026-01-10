@@ -22,6 +22,7 @@ HOMEFILES = \
 	.bashrc.d/tilix.sh \
 	.bashrc.d/vim.sh \
 	.bashrc.d/wget.sh \
+	.bashrc.d/which.sh \
 	.gitconfig \
 	.perltidyrc \
 	.ssh/id_ed25519.pub \
