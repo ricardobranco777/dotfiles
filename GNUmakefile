@@ -23,6 +23,7 @@ HOMEFILES = \
 	.bashrc.d/vim.sh \
 	.bashrc.d/wget.sh \
 	.bashrc.d/which.sh \
+	.clang-format \
 	.gitconfig \
 	.perltidyrc \
 	.ssh/id_ed25519.pub \
